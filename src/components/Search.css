@@ -1,0 +1,58 @@
+.inputs-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  color: white;
+  gap: 2rem;
+}
+.metrics-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  color: white;
+  margin-left: 6%;
+  margin-bottom: 20px;
+}
+.search-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+  gap: 1rem;
+}
+.search-section form input {
+  outline: none;
+  height: 3rem;
+}
+
+.search-input {
+  font-size: 1.6rem;
+  padding: 8px;
+}
+
+.search-button,
+.location-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+button:hover {
+  scale: 1.2;
+}
+.unit-button {
+  font-size: 1.6rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.separator {
+  font-size: 1.6rem;
+  color: white;
+  margin: 0 8px;
+}

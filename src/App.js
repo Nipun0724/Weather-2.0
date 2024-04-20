@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Cities from "./components/Cities";
+// import Cities from "./components/Cities";
 import Search from "./components/Search";
 import Result from "./components/Result";
-import getData from "./components/Services";
+import fetchWeather from "./components/Services";
 function App() {
   const [query, setQuery] = useState({ q: "vellore" });
   const [units, setUnits] = useState("metric");
@@ -15,13 +15,19 @@ function App() {
   }
   useEffect(() => {
     const getWeather = async () => {
-      await getData({ ...query, units }).then((data) => setWeather(data));
+      try {
+        const data = await fetchWeather({ ...query, units });
+        setWeather(data);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
     };
     getWeather();
   }, [query, units]);
+
   return (
     <div className={`${backgroundHandler()}`}>
-      <Cities setQuery={setQuery} />
+      {/* <Cities setQuery={setQuery} /> */}
       <Search setQuery={setQuery} setUnits={setUnits} />
       {weather && (
         <div>

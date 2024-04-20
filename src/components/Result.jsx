@@ -11,6 +11,7 @@ import {
 } from "@iconscout/react-unicons";
 import { getTime, getCode } from "./Services";
 
+// Result component displays weather details
 const Result = ({
   weather: {
     temp,
@@ -29,15 +30,18 @@ const Result = ({
   },
   units,
 }) => {
+  // State to manage time format based on window size
   const [format, setFormat] = useState(
     "cccc, dd LLL yyyy' | Local Time: 'hh:mm a"
   );
+
+  // Effect hook to update time format based on window resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 500) {
-        setFormat("dd LLL yyyy");
+        setFormat("dd LLL yyyy"); // Adjust format for smaller screens
       } else {
-        setFormat("cccc, dd LLL yyyy' | Local Time: 'hh:mm a");
+        setFormat("cccc, dd LLL yyyy' | 'hh:mm a"); // Default format for larger screens
       }
     };
 
@@ -48,19 +52,20 @@ const Result = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <>
-      <div className="time-location-container">
-        <p className="time">{getTime(dt, timezone / 60, format)}</p>
-      </div>
-      <div className="time-location-container">
+      {/* Displaying time and location */}
+      <div className="timloc">
         <p className="country">{`${name}, ${country}`}</p>
       </div>
-      <div className="main-details">
-        <img src={getCode(icon)} alt="" className="weather-icon" />
-        <p className="temperature">{`${temp.toFixed()}°${
-          units === "metric" ? "C" : "F"
-        }`}</p>
+      <div className="timloc">
+        <p className="time">{getTime(dt, timezone / 60, format)}</p>
+      </div>
+
+      {/* Main weather details */}
+      <div className="details">
+        {/* Extra weather details */}
         <div className="extra-details">
           <div className="detail">
             <UilTemperature size={18} className="icon" />
@@ -77,6 +82,8 @@ const Result = ({
           </div>
         </div>
       </div>
+
+      {/* Additional weather conditions */}
       <div className="main-conditions">
         <div className="condition">
           <UilSun size={18} />

@@ -8,10 +8,23 @@ function App() {
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
   function backgroundHandler() {
-    if (!weather) return "sunny";
-    const threshold_temp = units === "metric" ? 30 : 86;
-    if (weather.temp <= threshold_temp) return "cold";
-    return "sunny";
+    if (!weather) {
+      return "sunny";
+    } else {
+      if (units === "metric") {
+        if (weather.temp <= 30) {
+          return "cold";
+        } else {
+          return "sunny";
+        }
+      } else {
+        if (weather.temp <= 86) {
+          return "cold";
+        } else {
+          return "sunny";
+        }
+      }
+    }
   }
   useEffect(() => {
     const getWeather = async () => {
@@ -28,7 +41,16 @@ function App() {
   return (
     <div className={`${backgroundHandler()}`}>
       {/* <Cities setQuery={setQuery} /> */}
-      <Search setQuery={setQuery} setUnits={setUnits} />
+      {weather && (
+        <div>
+          <Search
+            setQuery={setQuery}
+            setUnits={setUnits}
+            units={units}
+            weather={weather}
+          />
+        </div>
+      )}
       {weather && (
         <div>
           <Result weather={weather} units={units} />

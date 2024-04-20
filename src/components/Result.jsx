@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Result.css";
+import "./Result.css"; // Importing CSS styles
 import {
   UilArrowUp,
   UilArrowDown,
@@ -8,27 +8,24 @@ import {
   UilWind,
   UilSun,
   UilSunset,
-} from "@iconscout/react-unicons";
-import { getTime, getCode } from "./Services";
+} from "@iconscout/react-unicons"; // Importing icons
+import { getTime } from "./Services"; // Importing utility function to get formatted time
 
 // Result component displays weather details
 const Result = ({
   weather: {
-    temp,
     temp_min,
     temp_max,
     dt,
     name,
     country,
     timezone,
-    icon,
     speed,
     humidity,
     feels_like,
     sunrise,
     sunset,
   },
-  units,
 }) => {
   // State to manage time format based on window size
   const [format, setFormat] = useState(
@@ -47,9 +44,9 @@ const Result = ({
 
     handleResize();
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize); // Event listener for window resize
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handleResize); // Cleanup on unmount
     };
   }, []);
 

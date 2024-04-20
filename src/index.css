@@ -1,105 +1,116 @@
+/* Importing Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 html {
-  font-family: "Space Mono", monospace;
+  font-family: "Space Mono", monospace; /* Applying Space Mono font to the entire document */
 }
 
+/* Styles for search component */
 .search {
-  width: 500px;
+  width: 500px; /* Setting width for search component */
 }
+
+/* Styles for background based on weather condition */
 .sunny {
   display: flex;
   padding-top: 100px;
   height: 100vh;
   gap: 6rem;
-  background-size: cover;
+  background-size: cover; /* Background size */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(/public/sunny.jpg) center/cover fixed no-repeat;
+    url(/public/sunny.jpg) center/cover fixed no-repeat; /* Background image and gradient */
 }
 .cold {
   display: flex;
   padding-top: 100px;
   height: 100vh;
   gap: 6rem;
-  background-size: cover;
+  background-size: cover; /* Background size */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(/public/cold.jpg) center/cover fixed no-repeat;
+    url(/public/cold.jpg) center/cover fixed no-repeat; /* Background image and gradient */
 }
+
+/* Additional body styles */
 body {
-  background-size: cover;
+  background-size: cover; /* Background size for body */
 }
+
+/* Styles for main details section */
 .maindet {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Flex layout */
 }
 .time {
-  white-space: nowrap;
+  white-space: nowrap; /* Prevent wrapping of text */
 }
+
+/* Media query for responsive design */
 @media (max-width: 500px) {
   * {
     margin: 0;
     padding: 0;
   }
+  /* Adjustments for smaller screens */
   .maincities {
-    gap: 20px;
+    gap: 20px; /* Adjusting gap between elements */
   }
   .maindet {
-    margin-top: -20px;
+    margin-top: -20px; /* Adjusting margin for main details section */
   }
   .search {
     margin-top: 20px;
-    margin-left: 80px;
-    width: 300px;
+    margin-left: 80px; /* Adjusting margins for search component */
+    width: 300px; /* Adjusting width for search component */
   }
   .sicon {
-    margin-top: 20px;
+    margin-top: 20px; /* Adjusting margin for search icon */
   }
-  .location {
-    visibility: hidden;
-  }
+  .location,
   .metrics {
-    visibility: hidden;
+    visibility: hidden; /* Hiding location and metrics on smaller screens */
   }
   .country {
-    font-size: 20px;
+    font-size: 20px; /* Adjusting font size for country */
   }
   .wicon {
     display: flex;
     width: 90px;
-    margin-left: -60px;
+    margin-left: -60px; /* Adjusting margin for weather icon */
   }
   .temp {
     display: flex;
-    font-size: 35px;
+    font-size: 35px; /* Adjusting font size for temperature */
   }
   .details {
-    font-size: 20px;
+    font-size: 20px; /* Adjusting font size for details */
   }
-  .result {
-    font-size: 20px;
+  .result,
+  .extra {
+    font-size: 20px; /* Adjusting font size for result and extra details */
   }
   .extra {
     display: block;
     margin-top: 20px;
-    margin-left: 20px;
-    font-size: 20px;
+    margin-left: 20px; /* Adjusting margin for extra details */
   }
   .desp {
-    margin-top: -10px;
+    margin-top: -10px; /* Adjusting margin for description */
   }
   .time {
-    font-size: 15px;
+    font-size: 15px; /* Adjusting font size for time */
   }
   .sep {
     font-size: 55px;
-    padding-left: 20px;
+    padding-left: 20px; /* Adjusting font size and padding for separator */
   }
   .maincon {
-    margin-top: 30px;
+    margin-top: 30px; /* Adjusting margin for main conditions section */
   }
 }

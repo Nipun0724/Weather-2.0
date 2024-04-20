@@ -10,6 +10,7 @@
   width: 500px;
 }
 
+/* Styles for the temperature icon */
 .temp-icon {
   margin-left: 6%;
   text-align: center;
@@ -19,6 +20,7 @@
 .weather-icon {
   height: 150px;
 }
+
 /* Styles for the metrics-section */
 .metrics-section {
   display: flex;
@@ -61,12 +63,12 @@
   border: none;
   cursor: pointer;
   color: white;
-  scale: 1.3;
+  transform: scale(1.3); /* Fix scale property */
 }
 
 /* Hover effect for buttons */
 button:hover {
-  scale: 1.8;
+  transform: scale(1.5); /* Fix scale property */
 }
 
 /* Styles for the unit switcher buttons */
@@ -75,6 +77,10 @@ button:hover {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.unit-button:hover {
+  transform: scale(1.2); /* Fix scale property */
 }
 
 /* Styles for the separator between unit switcher buttons */

@@ -1,21 +1,21 @@
-/* Styles for the main details section */
+/* Main details section */
 .details {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25%;
+  gap: 25%; /* Spacing between elements */
   color: white;
   font-weight: bold;
   margin-left: 4%;
 }
 
-/* Styles for the temperature display */
+/* Temperature display */
 .temperature {
   color: white;
   font-size: 3rem;
 }
 
-/* Styles for the extra details section */
+/* Extra details section */
 .extra-details {
   display: flex;
   flex-direction: column;
@@ -23,26 +23,26 @@
   margin-top: 30px;
 }
 
-/* Styles for individual weather details */
+/* Individual weather details */
 .detail {
   display: flex;
   align-items: center;
 }
 
-/* Styles for the weather detail icons */
+/* Weather detail icons */
 .icon {
   color: white;
   margin-right: 4px;
 }
 
-/* Styles for the value of weather details */
+/* Value of weather details */
 .value {
   color: white;
   font-weight: bold;
   margin-left: 10px;
 }
 
-/* Styles for the main weather conditions section */
+/* Main weather conditions section */
 .main-conditions {
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@
   gap: 2rem;
 }
 
-/* Styles for individual weather conditions */
+/* Individual weather conditions */
 .condition {
   display: flex;
   flex-direction: column;
@@ -60,20 +60,20 @@
   margin-right: 10px;
 }
 
-/* Styles for the time display */
+/* Time display */
 .time {
   color: white;
   margin-left: 4px;
 }
 
-/* Styles for special weather conditions */
+/* Special weather conditions */
 .special {
   border-left: 2px solid white;
   padding-left: 7%;
   padding-right: 3%;
 }
 
-/* Styles for the time-location container */
+/* Time-location container */
 .timloc {
   display: flex;
   justify-content: center;
@@ -81,13 +81,13 @@
   margin-top: 24px;
 }
 
-/* Styles for the time display within time-location container */
+/* Time display within time-location container */
 .time {
   color: white;
   font-size: 1.6rem;
 }
 
-/* Styles for the country display within time-location container */
+/* Country display within time-location container */
 .country {
   color: white;
   font-size: 2.4rem;

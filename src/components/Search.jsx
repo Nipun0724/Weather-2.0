@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { getCode } from "./Services";
-import { UilSearch, UilLocationPinAlt } from "@iconscout/react-unicons";
-import "./Search.css";
+import { getCode } from "./Services"; // Importing utility function to get weather icon code
+import { UilSearch, UilLocationPinAlt } from "@iconscout/react-unicons"; // Importing icons
+import "./Search.css"; // Importing CSS styles
 
 // Functional component Search receives setQuery and setUnits as props
 const Search = ({ weather, units, setQuery, setUnits }) => {
@@ -77,6 +77,7 @@ const Search = ({ weather, units, setQuery, setUnits }) => {
           </button>
         </div>
       </div>
+      {/* Display weather icon and temperature */}
       <div className="temp-icon">
         <img src={getCode(weather.icon)} alt="" className="weather-icon" />
         <p className="temperature">{`${weather.temp.toFixed()}°${
